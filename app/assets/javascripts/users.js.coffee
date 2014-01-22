@@ -1,17 +1,13 @@
 $(document).ready ->
-  $('.close').click ->
+  $('.close').on "click", ->
     $('#showUser').fadeOut()
 
   $('form#new_user').on "ajax:success", (data, status, xhr) ->
-    $('#listContainer').load('userlist/', -> bindListBehavior())
+    $('#listContainer').load('userlist/')
 
-  bindListBehavior = ->
-    $('span.showUser').click ->
-      userid = $(this).attr('userid')
-      $('#userDiv').load('users/' + userid, -> $('#showUser').show() )
+  $('#listContainer').on 'click', 'span.showUser', ->
+    userid = $(this).attr('userid')
+    $('#userDiv').load('users/' + userid, -> $('#showUser').show() )
 
-    $('.delete_user').bind 'ajax:success', ->
-      $(this).closest('tr').fadeOut()
-
-  # only major change in coffeescript translation: bindListBehavior must be called after it is defined
-  bindListBehavior()
+  $('#listContainer').on 'ajax:success', '.delete_user', ->
+    $(this).closest('tr').fadeOut()
