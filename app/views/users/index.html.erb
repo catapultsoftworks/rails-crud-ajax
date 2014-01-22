@@ -1,0 +1,21 @@
+<h1>Listing users (ajax)</h1>
+
+
+<div id="listContainer">
+    <%= render 'list' %>   
+</div>
+
+<br />
+<div id="newUser">
+    <%= render 'form', object: @new_user %>   
+</div>
+
+<div id="showUser">
+    <div id="userDiv">
+    </div>
+    <div>
+      <span class="close">[close]</span>
+    </div>
+</div>
+
+<%= link_to 'New User', new_user_path %>

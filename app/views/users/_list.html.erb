@@ -1,0 +1,17 @@
+    <table>
+      <tr>
+        <th>Netid</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.netid %></td>
+        <td><span class="showUser" userid="<%= user.id %>">Show</span></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_user' %></td>
+      </tr>
+    <% end %>
+    </table>
