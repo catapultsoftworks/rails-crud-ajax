@@ -1,12 +1,12 @@
 Demonstrates one possible method of doing CRUD operations in a single page.
 
-pulled index table into a partial view called _list.html.erb.  
-created controller method  "list" 
-created route for "list"
+- pulled index table into a partial view called _list.html.erb.  
+- created controller method  "list" 
+- created route for "list"
 
-included _form partial in index, added remote: true
-on ajax success, jquery .load the list again.  rebind show/destroy behaviors
+- included _form partial in index, added remote: true
+- on ajax success, jquery .load the list again.  rebind show/destroy behaviors
 
-added a div to load /show in-page
-changed destroy to remote: true with row fade-out in the callback
+- added a div to load /show in-page
+- changed destroy to remote: true with row fade-out in the callback
 
